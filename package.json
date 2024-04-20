@@ -1,0 +1,18 @@
+{
+  "name": "bluecrop",
+  "version": "1.0.0",
+  "description": "BluceCrop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.activate"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
