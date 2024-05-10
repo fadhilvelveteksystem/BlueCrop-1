@@ -31,7 +31,9 @@ a {
     font-weight: 600; }
 
 .custom-navbar {
-  background: #3c5c70 !important;
+  position: fixed;
+  width: 100%;
+  background: #fdfefe !important;
   padding-top: 20px;
   padding-bottom: 20px; }
   .custom-navbar .navbar-brand {
@@ -51,7 +53,7 @@ a {
       margin-right: 15px; } }
   .custom-navbar .custom-navbar-nav li a {
     font-weight: 500;
-    color: #f2eff6 !important;
+    color: #0a080c !important;
     opacity: .5;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -94,6 +96,17 @@ a {
       margin-right: 0px; }
       .custom-navbar .custom-navbar-cta li:first-child {
         margin-right: 20px; }
+
+
+
+ .image-container {
+          text-align: right; /* Align the image to the right within its container */
+      }
+      
+ .hero-img-wrap {
+          display: flex; /* Use flexbox for alignment */
+          justify-content: flex-end; /* Align content to the right side */
+      }
 
 .hero {
   background: transparent;
@@ -142,8 +155,8 @@ a {
           right: -50px; } }
       @media (min-width: 1200px) {
         .hero .hero-img-wrap img {
-          left: 0px;
-          top: -80px;
+          left: 260px;
+          top: 22px;
           right: -100px; } }
     .hero .hero-img-wrap:after {
       content: "";
@@ -296,7 +309,6 @@ a {
     position: relative;
     margin-bottom: 20px; }
     .feature .icon:before {
-      content: "";
       width: 33px;
       height: 33px;
       position: absolute;
@@ -726,3 +738,7 @@ textarea {
       overflow: auto; /* Enable scrolling if content overflows */
     }
 
+
+    
+
+    

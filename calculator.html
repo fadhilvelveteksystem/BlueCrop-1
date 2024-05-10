@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Usage Calculator</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="css/tiny-slider.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    
+  }
+  h1 {
+    text-align: center;
+    padding: 20px 0;
+  }
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #04AA6D;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .total-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  /* Your existing CSS styles */
+  table th {
+    color: white; /* Text color */
+  }
+
+  .navbar-nav .nav-link {
+    color: black; /* Change text color to black */
+  }
+
+  .navbar-toggler {
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none; /* Remove box shadow on focus */
+  }
+
+  /* Additional styles for navbar */
+  .navbar-toggler .fa-bars {
+    color: #0e0a38; /* Color of the bars icon */
+  }
+
+  .navbar-toggler {
+    border: none; /* Remove default button border */
+    background-color: transparent; /* Make button background transparent */
+  }
+
+  .navbar-toggler:focus {
+    outline: auto; /* Remove focus outline */
+  }
+
+  .transparent-border {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 3px transparent; /* Adjusted border width and color */
+    border-radius: 15px; /* Added border radius for a more rounded appearance */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+    width: 100%; /* Set the width to 100% */
+    text-align: center; /* Center-align the content */
+  }
+
+  .custom-navbar {
+    position: relative;
+    z-index: 1000; /* Adjust the z-index as needed */
+  }
+
+  .hero {
+    position: relative;
+    z-index: 0; /* Adjust the z-index as needed */
+    padding-top: 100px;
+  }
+
+  /* Adjust the navbar width for mobile */
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      width: 100%;
+      padding: 0;
+      background-color: rgba(255, 255, 255, 0.9); /* Background color for collapsed navbar */
+    }
+  }
+</style>
+<script>
+  // Add event listener to input fields with class 'times-per-day' to allow only numeric input
+  document.addEventListener("DOMContentLoaded", function() {
+    const numericInputs = document.querySelectorAll('.times-per-day');
+    numericInputs.forEach(function(input) {
+      input.addEventListener('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+
+<nav class="custom-navbar navbar navbar-expand-md navbar-white bg-white" arial-label="Furni navigation bar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Page 2 copy.png" class="img-fluid" style="width: 190px; height: auto;">
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="fa fa-bars"></i> <!-- Font Awesome bars icon -->
+      </span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsFurni">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li><a class="nav-link" href="shop.html">Products</a></li>
+        <li><a class="nav-link" href="about.html">About us</a></li>
+        <li><a class="nav-link" href="calculator.html">Calculator</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="userModal" class="modal">
+  <div class="modal-content">
+   
+    <h2>Please Enter Your Information</h2>
+    <form id="submit-form" action="" role="form" class="php-form">
+      <div class="form-group">
+        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input style="width: auto;" type="text" class="form-control" name="phone" id="phone" placeholder="phone number" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+      </div>
+      
+      
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" id="email" placeholder="email" >
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  /* Modal container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  max-width: 400px; /* Adjust the width as needed */
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Form input styling */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Center the button */
+.text-center {
+  text-align: center;
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+
+
+  <h1 style="padding: 100px;">Water Usage Calculator</h1>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table" id="indoor-activities">
+      <thead style="background-color:#001f3f;">
+        <tr>
+          <th>Activity</th>
+          <th>Times Per Day</th>
+          <th>Activity Ltr/Day</th>
+          <th>Ltr Per Day</th>
+          <th>Ltr Per Year</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+    <tr>
+      <td>Shower</td>
+      <td><input type="number" class="times-per-day" data-activity="15"></td>
+      <td>15</td>
+      <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+    </tr>
+    <tr>
+        <td>Bath</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>150 Litres</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+        <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Dishwasher</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>30 Litres per load</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Front Load Washing Machine</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>80 Litres per load</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Top Load Washing Machine</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>100 Litres per load</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Brushing Teeth With tap running</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>5 Litres per person</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+        <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Drinking,Cleaning,Cooking per person</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>10 Litres per day,per person</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>Hand Basin Use</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>5 Litres per time</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>ToiletFlush Single</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>6 Litres per time</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+      <tr>
+        <td>ToiletFlush Half</td>
+        <td><input type="number"class="times-per-day" data-activity="15"></td>
+        <td>3 Litres per time</td>
+        <td><input type="number" class="ltr-per-day" readonly></td>
+      <td><input type="number" class="ltr-per-year" readonly></td>
+      </tr>
+  </tbody>
+      
+    </table>
+  </div>
+
+  <h4>Outdoor Activities</h4>
+  <div class="table-responsive">
+    <table class="table" id="outdoor-activities">
+      <thead style="background-color:#001f3f;">
+        <tr>
+          <th>Activity</th>
+          <th>Times Per Day</th>
+          <th>Units</th>
+          <th>Ltr Per Day</th>
+          <th>Ltr Per Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Garden Sprinkler</td>
+          <td><input type="number" class="times-per-day" data-activity="15"></td>
+          <td>Garden Hose 15L/min</td>
+          <td><input type="number" class="ltr-per-day" readonly></td>
+          <td><input type="number" class="ltr-per-year" readonly></td>
+        </tr>
+        <tr>
+            <td>Car Wash</td>
+            <td><input type="number"class="times-per-day" data-activity="15"></td>
+            <td>200 Litres</td>
+            <td><input type="number" class="ltr-per-day" readonly></td>
+            <td><input type="number" class="ltr-per-year" readonly></td>
+          </tr>
+          <tr>
+            <td>Drip System</td>
+            <td><input type="number"class="times-per-day" data-activity="15"></td>
+            <td>Litres per hour</td>
+            <td><input type="number" class="ltr-per-day" readonly></td>
+          <td><input type="number" class="ltr-per-year" readonly></td>
+          </tr>
+          <tr>
+              <td>Filling pool</td>
+              <td><input type="number"class="times-per-day" data-activity="15"></td>
+              <td>Size in Litres</td>
+              <td><input type="number" class="ltr-per-day" readonly></td>
+            <td><input type="number" class="ltr-per-year" readonly></td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="total-section">
+    <h2>Total Water Usage</h2>
+    <div class="activity-totals-container">
+      <div class="container-card bg-green-box animated-card">
+        <h3 style="font-size: medium;" class="card-title">Indoor Activities Total</h3>
+        <p style="font-size: larger;" class="card-description">Litres per Day: <span id="total-indoor-ltr-day" class="highlight">0</span></p>
+        <p class="card-description">Litres per Year: <span id="total-indoor-ltr-year" class="highlight">0</span></p>
+      </div>
+      <div class="container-card bg-green-box animated-card">
+        <h3 style="font-size: medium;" class="card-title">Outdoor Activities Total</h3>
+        <p style="font-size: larger;" class="card-description">Litres per Day: <span id="total-outdoor-ltr-day" class="highlight">0</span></p>
+        <p class="card-description">Litres per Year: <span id="total-outdoor-ltr-year" class="highlight">0</span></p>
+      </div>
+      <div class="container-card bg-green-box animated-card">
+        <h3 style="font-size: medium;" class="card-title">Total Usage</h3>
+        <p style="font-size: larger;" class="card-description">Litres per Day: <span id="total-combined-ltr-day" class="highlight">0</span></p>
+        <p class="card-description">Litres per Year: <span id="total-combined-ltr-year" class="highlight">0</span></p>
+      </div>
+    </div>
+  </div>
+  
+<style>
+  .container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #110a54, #0d0c38, #05073a);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.card-title {
+  font-weight: bold;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+.card-description {
+  font-weight: bold;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.9);
+  font-size: 16px;
+  max-width: 470px;
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .highlight {
+  color: rgb(249, 4, 4); /* Change the color to whatever you want */
+  font-weight: bolder; /* Add any other styles for highlighting */
+}
+
+  /* Flexbox layout for the activity totals */
+.activity-totals-container {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute space evenly between children */
+}
+
+/* Style for each activity total section */
+.activity-totals-container > div {
+  width: calc(33.33% - 20px); /* Each section takes one-third of the container's width with some spacing */
+  padding: 10px; /* Add padding */
+  border: 1px solid #ddd; /* Add border */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+/* Style for the headings */
+.activity-totals-container h3 {
+  margin-top: 0; /* Remove default margin */
+}
+
+</style>  
+		<!-- Start Footer Section -->
+		<footer class="footer-section">
+			<div class="container relative">
+
+				
+
+				<div class="row g-5 mb-5">
+					<div class="col-lg-4">
+						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Bluecrop<span>.</span></a></div>
+						<p class="mb-4">Bluecrop tanks are made of best food grade & medical grade stainless steel. It provides clean and hygienic water to your family. It does not propagate any algae or bacteria and has the natural ablity to prevent its growth inside the tank</p>
+
+						<ul class="list-unstyled custom-social">
+							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-8">
+						<div class="row links-wrap" style="margin-top: 50px;">
+							<div class="col">
+								<ul class="list-unstyled">
+									<li><a href="/about.html">About us</a></li>
+									<li><a href="/services.html">Services</a></li>
+									<li><a href="/contact.html">Contact us</a></li>
+									<li><a href="#">Terms &amp; Conditions</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					
+
+				</div>
+
+				<div class="border-top copyright">
+					<div class="row pt-4">
+						<div class="col-lg-6">
+							<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed by <a href="https://velveteksystems.com">Velvetek systems.</a> 
+            </p>
+						</div>
+
+						<div class="col-lg-6 text-center text-lg-end">
+							<ul class="list-unstyled d-inline-flex ms-auto">
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Display the modal when the page loads
+    var modal = document.getElementById("userModal");
+    modal.style.display = "block";
+    
+    // Get the close button
+    var closeBtn = document.querySelector(".close");
+    
+    // Close the modal when the user clicks on the close button
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+    
+    // Validate the form before submission
+    var form = document.getElementById("userInfoForm");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Validate form inputs
+      var name = document.getElementById("name").value;
+      var mobile = document.getElementById("mobile").value;
+      console.log(name,mobile,"hello");
+      // Basic validation: ensure name is not empty and mobile number is valid
+      if (name.trim() === "") {
+        alert("Please enter your name.");
+        return;
+      }
+      
+      // You can add more robust validation for mobile number if needed
+      
+      // If all validations pass, proceed to the calculator page
+      // window.location.href = "calculator.html";
+      
+      // Hide the modal when the form is successfully submitted
+      // modal.style.display = "none";
+      
+      // Call the function to update water usage summary
+      updateUsageSummary();
+      
+      // Mark the form as submitted in localStorage
+      localStorage.setItem("formSubmitted", true);
+    });
+  });
+
+  // Function to update the water usage summary
+  function updateUsageSummary() {
+    // Your code to update the water usage summary goes here...
+  }
+</script>
+
+<script>
+  $("#submit-form").submit((e) => {
+    e.preventDefault();
+    $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbzLEjHVV6_xn4_mi4gzhbG663rHiJQgkEHtmJLFzYPFGZX65n0VdS4EQUOGo1pUtw0UIQ/exec",
+      data: $("#submit-form").serialize(),
+      method: "post",
+      success: function(response) {
+        alert("Form submitted successfully");
+        // Close the modal after successful submission
+        $("#userModal").hide();
+      },
+      error: function(err) {
+        alert("Something Error");
+      }
+    });
+  });
+</script>
+
+<script>
+$(document).ready(function() {
+  $('.times-per-day').on('input', function() {
+    updateUsageSummary();
+  });
+
+  function updateUsageSummary() {
+    // Your existing code to calculate and update water usage summary goes here...
+  }
+
+  // Initial update of usage summary when the page loads
+  updateUsageSummary();
+});
+
+
+$(document).ready(function() {
+  $('.times-per-day').on('input', function() {
+    updateUsageSummary();
+  });
+
+  function updateUsageSummary() {
+    let totalIndoorLtrDay = 0;
+    let totalIndoorLtrYear = 0;
+    let totalOutdoorLtrDay = 0;
+    let totalOutdoorLtrYear = 0;
+
+    // Calculate and update indoor activities usage
+    $('#indoor-activities tbody tr').each(function() {
+      const timesPerDay = parseInt($(this).find('.times-per-day').val()) || 0;
+      const activityLtrPerDay = parseInt($(this).find('td:nth-child(3)').text()) || 0;
+      const ltrPerDay = timesPerDay * activityLtrPerDay;
+      const ltrPerYear = ltrPerDay * 365;
+
+      $(this).find('.ltr-per-day').val(ltrPerDay.toFixed(2));
+      $(this).find('.ltr-per-year').val(ltrPerYear.toFixed(2));
+
+      totalIndoorLtrDay += ltrPerDay;
+      totalIndoorLtrYear += ltrPerYear;
+    });
+
+    // Calculate and update outdoor activities usage
+    $('#outdoor-activities tbody tr').each(function() {
+      const timesPerDay = parseInt($(this).find('.times-per-day').val()) || 0;
+      const activityLtrPerDay = parseInt($(this).find('td:nth-child(3)').text()) || 0;
+      const ltrPerDay = timesPerDay * activityLtrPerDay;
+      const ltrPerYear = ltrPerDay * 365;
+
+      $(this).find('.ltr-per-day').val(ltrPerDay.toFixed(2));
+      $(this).find('.ltr-per-year').val(ltrPerYear.toFixed(2));
+
+      totalOutdoorLtrDay += ltrPerDay;
+      totalOutdoorLtrYear += ltrPerYear;
+    });
+
+    // Update total water usage for indoor activities
+    $('#total-indoor-ltr-day').text(totalIndoorLtrDay.toFixed(2));
+    $('#total-indoor-ltr-year').text(totalIndoorLtrYear.toFixed(2));
+
+    // Update total water usage for outdoor activities
+    $('#total-outdoor-ltr-day').text(totalOutdoorLtrDay.toFixed(2));
+    $('#total-outdoor-ltr-year').text(totalOutdoorLtrYear.toFixed(2));
+
+    // Calculate and update combined total water usage
+    const totalCombinedLtrDay = totalIndoorLtrDay + totalOutdoorLtrDay;
+    const totalCombinedLtrYear = totalIndoorLtrYear + totalOutdoorLtrYear;
+
+    $('#total-combined-ltr-day').text(totalCombinedLtrDay.toFixed(2));
+    $('#total-combined-ltr-year').text(totalCombinedLtrYear.toFixed(2));
+  }
+
+  // Initial update of usage summary when the page loads
+  updateUsageSummary();
+});
+</script>
+
+
+<script>
+  $(document).ready(function() {
+    $('.times-per-day').on('input', function() {
+      updateUsageSummary();
+    });
+
+    function updateUsageSummary() {
+      let totalOutdoorLtrDay = 0;
+      let totalOutdoorLtrYear = 0;
+
+      // Calculate and update outdoor activities usage
+      $('#outdoor-activities tbody tr').each(function() {
+        const timesPerDay = parseInt($(this).find('.times-per-day').val()) || 0;
+        const activityLtrPerDay = $(this).find('.times-per-day').data('activity') || 0;
+        const ltrPerDay = timesPerDay * activityLtrPerDay;
+        const ltrPerYear = ltrPerDay * 365;
+
+        $(this).find('.ltr-per-day').val(ltrPerDay.toFixed(2));
+        $(this).find('.ltr-per-year').val(ltrPerYear.toFixed(2));
+
+        totalOutdoorLtrDay += ltrPerDay;
+        totalOutdoorLtrYear += ltrPerYear;
+      });
+
+      // Update total water usage for outdoor activities
+      $('#total-outdoor-ltr-day').text(totalOutdoorLtrDay.toFixed(2));
+      $('#total-outdoor-ltr-year').text(totalOutdoorLtrYear.toFixed(2));
+
+      // Recalculate combined total water usage
+      updateCombinedTotal();
+    }
+
+    function updateCombinedTotal() {
+      const totalIndoorLtrDay = parseFloat($('#total-indoor-ltr-day').text()) || 0;
+      const totalOutdoorLtrDay = parseFloat($('#total-outdoor-ltr-day').text()) || 0;
+      const totalIndoorLtrYear = parseFloat($('#total-indoor-ltr-year').text()) || 0;
+      const totalOutdoorLtrYear = parseFloat($('#total-outdoor-ltr-year').text()) || 0;
+
+      const totalCombinedLtrDay = totalIndoorLtrDay + totalOutdoorLtrDay;
+      const totalCombinedLtrYear = totalIndoorLtrYear + totalOutdoorLtrYear;
+
+      $('#total-combined-ltr-day').text(totalCombinedLtrDay.toFixed(2));
+      $('#total-combined-ltr-year').text(totalCombinedLtrYear.toFixed(2));
+    }
+
+    // Initial update of usage summary when the page loads
+    updateUsageSummary();
+  });
+
+</script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

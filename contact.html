@@ -25,83 +25,135 @@
 	</head>
 
 	<body>
-
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
-
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="images/Page 2 copy.png" class="img-fluid" style="width: 190px; height: auto;">
-					
-					<span></span>
-				  </a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						
-						<li class="active"><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-
-				</div>
-			</div>
+		<style>
+			body {
 				
-		</nav>
+				background-color: #FFFFFF;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%230C047C'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%230C047C'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(24.3) translate(-958.85 -719.14)'%3E%3Cg fill='%230C047C'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+				/* For screens smaller than 768px (tablets and mobile devices) */
+@media (max-width: 767.98px) {
+  .hero-img-wrap img {
+    display: none; /* Hide all images in the hero section on small screens */
+  }
+}
+
+			}
+		</style>
+
+<!-- Start Header/Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/Page 2 copy.png" class="img-fluid" style="width: 190px; height: auto;" alt="Logo">
+        </a>
+
+        <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="calculator.html">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Header/Navigation -->
+
+<style>
+    /* Custom styles for responsiveness */
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 15px; /* Adjust spacing between nav items */
+    }
+
+    .navbar-brand img {
+        max-width: 100%; /* Make sure logo doesn't overflow on smaller screens */
+    }
+
+    @media (max-width: 767px) {
+        /* Adjust styles for smaller devices */
+        .navbar-nav .nav-item {
+            margin-right: 0; /* Remove right margin on small devices */
+            margin-bottom: 10px; /* Add some bottom margin for spacing */
+        }
+    }
+</style>
+
+
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero " style="background-color: rgb(221, 216, 216);">
+			<div class="hero " style=" background-color:transparent" >
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
 								<h1>Contact</h1>
-								<p class="mb-4">For inquiries, assistance, or more information about our products and services, feel free to reach out to us via phone, email, or visit our website. Our dedicated team is ready to assist you in finding the perfect water storage solution to meet your needs.</p>
-								<p><a href="/shop.html" class="btn btn-secondary me-2">Shop Now</a><a href="/about.html" class="btn btn-white-outline">Explore</a></p>
+								<p class="mb-4" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.5;">For inquiries, assistance, or more information about our products and services, feel free to reach out to us via phone, email, or visit our website. Our dedicated team is ready to assist you in finding the perfect water storage solution to meet your needs.</p>
+
 							</div>
 						</div>
 						<div class="col-lg-7">
-							<!-- <div class="hero-img-wrap">
-								<img src="images/couch.png" class="img-fluid">
-							</div> -->
+							<div class="hero-img-wrap">
+								<img style="height: 500px; width: 400px;" src="/images/WhatsApp Image 2024-04-18 at 15.44.17 (1).jpeg" class="img-fluid">
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		<!-- End Hero Section -->
 
-		
 		<!-- Start Contact Form -->
 		<div class="untree_co-section">
+			
       <div class="container">
 
         <div class="block">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center"  style="border: #1f1a53 solid;">
 
 
-            <div class="col-md-8 col-lg-8 pb-4">
+            <div class="col-md-8 col-lg-8 pb-4" >
+				
 
-
-              <div class="row mb-5">
+              <div style="padding-top:100px ;" class="row mb-5">
                 <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
+					<a href="https://www.google.com/maps/dir//Chittilappilly+Traders,+N+Pullazhi+Rd,+Nedupurha,+Olarikkara,+Thrissur,+Kerala+680012/@10.4957876,76.178478,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba7ee755bfb28df:0xe24905a485b81cc1!2m2!1d76.1787684!2d10.5173?entry=ttu"><div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
                     <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                      <p>Opp.Casino Hotel Complex,Kokkalai Thrissur,Kerala</p>
                     </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
+                  </div> 
+				</a><!-- /.service -->
                 </div>
 
                 <div class="col-lg-4">
@@ -112,7 +164,7 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>info@yourdomain.com</p>
+                      <p>hello@bluecrop.com</p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
@@ -125,39 +177,34 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>+1 294 3925 3939</p>
+                      <p>+91 8907326575,9544555085</p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
               </div>
 
-              <form>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="fname">First name</label>
-                      <input type="text" class="form-control" id="fname">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="lname">Last name</label>
-                      <input type="text" class="form-control" id="lname">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="text-black" for="email">Email address</label>
-                  <input type="email" class="form-control" id="email">
-                </div>
-
-                <div class="form-group mb-5">
-                  <label class="text-black" for="message">Message</label>
-                  <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
-              </form>
+			  <form id="submit-form" action=""  role="form" class="php-form">
+				<div class="row">
+				  <div class="col-md-6 form-group">
+					<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+				  </div>
+				  <div class="col-md-6 form-group mt-3 mt-md-0">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+				  </div>
+				</div>
+				<div class="form-group mt-3">
+				  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+				</div>
+				<div class="form-group mt-3">
+				  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+				</div>
+				<div class="my-3">
+				  
+				  
+				  <div class="error-message"></div>
+				</div>
+				<div class="text-center"><button type="submit">Send Message</button></div>
+			  </form>
 
             </div>
 
@@ -175,9 +222,12 @@
 
 		
 
+	
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
 			<div class="container relative">
+
+				
 
 				<div class="row g-5 mb-5">
 					<div class="col-lg-4">
@@ -192,18 +242,18 @@
 					</div>
 
 					<div class="col-lg-8">
-						<div class="row links-wrap" style="margin-top: 100px;">
+						<div class="row links-wrap" style="margin-top: 50px;">
 							<div class="col">
-								<ul class="list-unstyled d-flex justify-content-between" style="margin-bottom: 6px;">
-									<li><a href="/about.html" style="margin-right: 10px;">About us</a></li>
-									<li><a href="/services.html" style="margin-right: 10px;">Services</a></li>
-									
+								<ul class="list-unstyled">
+									<li><a href="/about.html">About us</a></li>
+									<li><a href="/services.html">Services</a></li>
 									<li><a href="/contact.html">Contact us</a></li>
+									<li><a href="#">Terms &amp; Conditions</a></li>
+									<li><a href="#">Privacy Policy</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					
 					
 					
 
@@ -218,8 +268,6 @@
 
 						<div class="col-lg-6 text-center text-lg-end">
 							<ul class="list-unstyled d-inline-flex ms-auto">
-								<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
 							</ul>
 						</div>
 
@@ -228,7 +276,29 @@
 
 			</div>
 		</footer>
+		<script>
+			$("#submit-form").submit((e)=>{
+				e.preventDefault()
+				$.ajax({
+					url:"https://script.google.com/macros/s/AKfycbzLEjHVV6_xn4_mi4gzhbG663rHiJQgkEHtmJLFzYPFGZX65n0VdS4EQUOGo1pUtw0UIQ/exec",
+					data:$("#submit-form").serialize(),
+					method:"post",
+					success:function (response){
+						alert("Form submitted successfully")
+						window.location.reload()
+						//window.location.href="https://google.com"
+					},
+					error:function (err){
+						alert("Something Error")
+		
+					}
+				})
+			})
+		</script>
 
+
+
+	</body>
 
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>

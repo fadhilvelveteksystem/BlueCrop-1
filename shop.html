@@ -25,43 +25,119 @@
 	</head>
 
 	<body>
-
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
-
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="images/Page 2 copy.png" class="img-fluid" style="width: 190px; height: auto;">
-					
-					<span></span>
-				  </a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="active"><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-
-					
-				</div>
-			</div>
+		<style>
+			body {
 				
-		</nav>
-		<!-- End Header/Navigation -->
+				background-color: rgb(232, 233, 233);
+				/* For screens smaller than 768px (tablets and mobile devices) */
+@media (max-width: 767.98px) {
+  .hero-img-wrap img {
+    display: none; /* Hide all images in the hero section on small screens */
+  }
+}
+
+			}
+		</style>
+		<nav class="custom-navbar navbar navbar-expand-md navbar-white bg-white" arial-label="Furni navigation bar">
+			<div class="container">
+			  <a class="navbar-brand" href="index.html">
+				<img src="images/Page 2 copy.png" class="img-fluid" style="width: 190px; height: auto;">
+			  </a>
+		  
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">
+				  <i class="fa fa-bars"></i> <!-- Font Awesome bars icon -->
+				</span>
+			  </button>
+		  
+			  <div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+				  <li class="nav-item active">
+					<a class="nav-link" href="index.html">Home</a>
+				  </li>
+				  <li><a class="nav-link" href="shop.html">Products</a></li>
+				  <li><a class="nav-link" href="about.html">About us</a></li>
+				  <li><a class="nav-link" href="calculator.html">Calculator</a></li>
+				  <li><a class="nav-link" href="services.html">Services</a></li>
+				  <li><a class="nav-link" href="contact.html">Contact us</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		  <style>
+			  .navbar-toggler .fa-bars {
+				color: #05031a; /* Color of the bars icon */
+			  }
+			
+			  .navbar-toggler {
+				border: none; /* Remove default button border */
+				background-color: transparent; /* Make button background transparent */
+			  }
+			
+			  .navbar-toggler:focus {
+				outline: auto; /* Remove focus outline */
+			  }
+			
+			  .transparent-border {
+				background-color: rgba(255, 255, 255, 0.5);
+				padding: 20px;
+				border: 3px transparent; /* Adjusted border width and color */
+				border-radius: 15px; /* Added border radius for a more rounded appearance */
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+				width: 100%; /* Set the width to 100% */
+				text-align: center; /* Center-align the content */
+			  }
+			
+			  .custom-navbar {
+				position: relative;
+				z-index: 1000; /* Adjust the z-index as needed */
+			  }
+			
+			  .hero {
+				position: relative;
+				z-index: 0; /* Adjust the z-index as needed */
+				padding-top: 150px;
+			  }
+			
+		  
+			  .navbar-toggler .fa-bars {
+				color: #05031a; /* Color of the bars icon */
+			  }
+			
+			  .navbar-toggler {
+				border: none; /* Remove default button border */
+				background-color: transparent; /* Make button background transparent */
+			  }
+			  
+			  .navbar-toggler:focus {
+				outline: auto; /* Remove focus outline */
+			  }
+			
+			  .transparent-border {
+				background-color: rgba(255, 255, 255, 0.5);
+				padding: 20px;
+				border: 3px transparent; /* Adjusted border width and color */
+				border-radius: 15px; /* Added border radius for a more rounded appearance */
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+				width: 100%; /* Set the width to 100% */
+				text-align: center; /* Center-align the content */
+			  }
+			
+			  .custom-navbar {
+				position: fixed;
+				z-index: 1000; /* Adjust the z-index as needed */
+			  }
+			  .hero {
+				position: relative;
+				z-index: 0; /* Adjust the z-index as needed */
+			  }
+			
+		</style>	
 
 		<!-- Start Hero Section -->
-			<div class="hero">
+			<div class="hero" >
 				<div class="container">
-					<div class="row justify-content-between">
+					<div class="row justify-content-between" >
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
 								<h1>Shop</h1>
@@ -78,12 +154,12 @@
 		
 
 		<div class="untree_co-section product-section before-footer-section">
-		    <div class="container">
-		      	<div class="row">
+		    <div  class="container">
+		      	<div  class="row">
 
 		      		<!-- Start Column 1 -->
-					  <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					  <div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.22.52 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: 505px;">
 							<div class="product-details" style="display: none;">
 								
@@ -123,16 +199,17 @@
 								</table>
 								<strong class="product-price">Bx-1500</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					<!-- End Column 1 -->
 						
 					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div  class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.22.39 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -172,16 +249,17 @@
 								</table>
 								<strong class="product-price">Bx-500</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					<!-- End Column 2 -->
 
 					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.21.57 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -221,16 +299,17 @@
 								</table>
 								<strong class="product-price">Bx-250</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					
 					
 					<!-- End Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.23.27 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -270,14 +349,15 @@
 								</table>
 								<strong class="product-price">Bx-1000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.23.11 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -317,17 +397,18 @@
 								</table>
 								<strong class="product-price">Bx-2000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					<!-- End Column 4 -->
 
 
 					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.24.29 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -367,16 +448,17 @@
 								</table>
 								<strong class="product-price">Bx-3000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					
 						
 					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div  class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.24.08 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -416,17 +498,18 @@
 								</table>
 								<strong class="product-price">Bx-5000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					
 					<!-- End Column 2 -->
 
 					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.25.06 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -466,16 +549,17 @@
 								</table>
 								<strong class="product-price">Bx-7000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					
 					<!-- End Column 3 -->
 
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.24.52 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -515,16 +599,17 @@
 								</table>
 								<strong class="product-price">BXH-1000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 					
 
 					<!-- End Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.24.52 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -564,13 +649,14 @@
 								</table>
 								<strong class="product-price">BXH-1500</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
-						<a class="product-item">
+					<div style="padding: 30px;" class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+						<div class="product-item">
 							<img src="images/tanks/Screenshot 2024-04-20 at 12.24.52 PM.png" class="img-fluid product-thumbnail" alt="Product Image" style="width: 100%; height: auto;">
 							<div class="product-details" style="display: none;">
 								
@@ -610,10 +696,11 @@
 								</table>
 								<strong class="product-price">BXH-2000</strong>
 							</div>
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid" alt="Close Icon">
+							<span  class="icon-cross bg-transparent">
+								<!-- WhatsApp icon without black color -->
+								<a href="https://wa.me/+918907326575">	<i class="fab fa-whatsapp" style="font-size: 48px; color: rgb(0, 255, 115);"></i></a>
 							</span>
-						</a>
+						</div>
 					</div>
 		      	</div>
 		    </div>
@@ -626,9 +713,7 @@
 		<footer class="footer-section">
 			<div class="container relative">
 
-				<div class="sofa-img">
-					<img src="images/sofa.png" alt="Image" class="img-fluid">
-				</div>
+				
 
 				<div class="row g-5 mb-5">
 					<div class="col-lg-4">
@@ -643,18 +728,18 @@
 					</div>
 
 					<div class="col-lg-8">
-						<div class="row links-wrap" style="margin-top: 100px;">
+						<div class="row links-wrap" style="margin-top: 50px;">
 							<div class="col">
-								<ul class="list-unstyled d-flex justify-content-between" style="margin-bottom: 6px;">
-									<li><a href="/about.html" style="margin-right: 10px;">About us</a></li>
-									<li><a href="/services.html" style="margin-right: 10px;">Services</a></li>
-									
+								<ul class="list-unstyled">
+									<li><a href="/about.html">About us</a></li>
+									<li><a href="/services.html">Services</a></li>
 									<li><a href="/contact.html">Contact us</a></li>
+									<li><a href="#">Terms &amp; Conditions</a></li>
+									<li><a href="#">Privacy Policy</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					
 					
 					
 
@@ -669,8 +754,6 @@
 
 						<div class="col-lg-6 text-center text-lg-end">
 							<ul class="list-unstyled d-inline-flex ms-auto">
-								<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
 							</ul>
 						</div>
 

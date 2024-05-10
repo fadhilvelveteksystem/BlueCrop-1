@@ -17,7 +17,7 @@ $dark: #ff0000;
 $light: #dce5e4;
 $lighter: #eff2f1;
 $body_color: #6a6a6a;
-$background_color: #CCFFE5; // New back
+$background_color: #ccd2ff; // New back
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
@@ -145,7 +145,7 @@ a {
 	
 	.intro-excerpt {
 		
-		position: relative;
+		position: sticky;
 		z-index: 4;
 		@media (min-width: $lg) {
 			max-width: 450px;
@@ -259,15 +259,15 @@ a {
 	color: $dark;
 }
 .product-section {
-	padding: 7rem 0;
 
 	.product-item {
 		text-align: center;
 		text-decoration: none;
 		display: block;
 		position: relative;
-		padding-bottom: 50px;
+		padding-bottom: 80px;
 		cursor: pointer;
+		
 
 		.product-thumbnail {
 			margin-bottom: 30px;
@@ -292,7 +292,7 @@ a {
 			width: 35px;
 			height: 35px;
 			display: inline-block;
-			background: $dark;
+			background: transparent; // Change background color to transparent
 			bottom: 15px;
 			left: 50%;
 			transform: translateX(-50%);
@@ -301,13 +301,10 @@ a {
 			opacity: 0;
 			visibility: hidden;
 			transition: .3s all ease;
-			img {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-			}
+			
 		}
+		
+		
 		&:before {
 			bottom: 0;
 			left: 0;
